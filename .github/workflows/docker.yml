@@ -51,8 +51,7 @@ jobs:
 
       - name: Authenticate to Repository
         run: |
-          gcloud auth configure-docker \
-          us-central1-docker.pkg.dev    
+          gcloud auth configure-docker   us-central1-docker.pkg.dev    
 
       - name: push
         run: docker push us-central1-docker.pkg.dev/light-processor-377018/team4/ots:2.0.0    
