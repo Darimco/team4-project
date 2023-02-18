@@ -40,7 +40,9 @@ jobs:
 
       - name: Build the image
         working-directory: ots
-        run: docker build -t us-central1-docker.pkg.dev/light-processor-377018/team4/ots:latest   .
+        run: |
+          git checkout 2.0.0
+          docker build -t us-central1-docker.pkg.dev/light-processor-377018/team4/ots:2.0.0   .
 
       - name: Authenticate to Registry 
         id: 'auth'
@@ -50,4 +52,4 @@ jobs:
           credentials_json: '${{ secrets.SERVICE_ACCOUNT }}'   
 
       - name: push
-        run: docker push us-central1-docker.pkg.dev/light-processor-377018/team4/ots:latest    
+        run: docker push us-central1-docker.pkg.dev/light-processor-377018/team4/ots:2.0.0    
