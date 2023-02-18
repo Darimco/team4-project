@@ -35,15 +35,16 @@ jobs:
       #   echo Add other actions to build,
       #    echo test, and deploy your project.
       # Runs a single command using the runners shell .
-      - name: clone a repository
+      - name: Clone a Repository
         run: git clone git@github.com:Luzifer/ots.git
 
-      - name: build the image
+      - name: Build the image
         working-directory: ots
         run: docker build -t us-central1-docker.pkg.dev/light-processor-377018/team4/ots:latest   .
 
-      - name: authenticate to registry 
+      - name: Authenticate to Registry 
         id: 'auth'
+        name: 'Authenticate to Google Cloud '
         uses: 'google-github-actions/checkout@v3
         with:
           credentials_json: '${{ secrets.SERVICE_ACCOUNT }}'   
