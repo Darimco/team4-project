@@ -44,7 +44,7 @@ jobs:
 
       - name: authenticate to registry 
       - id: 'auth'
-        uses: 'google-github-actions/auth@v0'
+        uses: 'google-github-actions/checkout@v3
         with:
           credentials_json: '${{ secrets.SERVICE_ACCOUNT }}'   
 
