@@ -43,7 +43,7 @@ jobs:
         run: docker build -t us-central1-docker.pkg.dev/light-processor-377018/team4/ots:latest   .
 
       - name: authenticate to registry 
-      - id: 'auth'
+        id: 'auth'
         uses: 'google-github-actions/checkout@v3
         with:
           credentials_json: '${{ secrets.SERVICE_ACCOUNT }}'   
