@@ -41,7 +41,7 @@ jobs:
       - name: Build the image
         working-directory: ots
         run: 
-          docker build -t us-central1-docker.pkg.dev/light-processor-377018/team4/ots:2.0.0   .
+          docker build -t us-central1-docker.pkg.dev/terraform-project-daria/team4/ots:2.0.0   .
 
       - name: Authenticate to Registry 
         id: 'auth'
@@ -54,4 +54,4 @@ jobs:
           gcloud auth configure-docker   us-central1-docker.pkg.dev    
 
       - name: push
-        run: docker push us-central1-docker.pkg.dev/light-processor-377018/team4/ots:2.0.0    
+        run: docker push us-central1-docker.pkg.dev/terraform-project-daria/team4/ots:2.0.0    
