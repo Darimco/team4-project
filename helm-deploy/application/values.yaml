@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: us-central1-docker.pkg.dev/light-processor-377018/team4/ots
+  repository: us-central1-docker.pkg.dev/terraform-project-daria/team4/ots
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "2.0.0"
@@ -46,14 +46,14 @@ ingress:
   annotations: 
     cert-manager.io/cluster-issuer: letsencrypt-prod
   hosts:
-    - host: application.aselya25789.com
+    - host: application.darimco.com
       paths:
         - path: /
           pathType: ImplementationSpecific
   tls: 
   - secretName: chart-example-tls
     hosts:
-      - application.aselya25789.com
+      - application.darimco.com
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
